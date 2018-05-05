@@ -12,7 +12,9 @@ class Member
   end
 
   def ammo
-    @element.get_elements('mEquipment/AmmoSlot/Amount').first.text.to_i
+    element = @element.get_elements('mEquipment/AmmoSlot/Amount').first
+    return element.text.to_i unless element.nil?
+    nil
   end
 end
 
