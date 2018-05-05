@@ -6,6 +6,10 @@ class Member
   def initialize(element)
     @element = element
   end
+
+  def hp
+    @element.get_elements('hp').first.text.to_i
+  end
 end
 
 # Main class that decorates the savefile
