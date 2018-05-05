@@ -11,6 +11,10 @@ class Member
     @element.get_elements('hp').first.text.to_i
   end
 
+  def hp=(new_hp)
+    @element.get_elements('hp').first.text = new_hp
+  end
+
   def ammo
     element = @element.get_elements('mEquipment/AmmoSlot/Amount').first
     return element.text.to_i unless element.nil?
@@ -28,5 +32,11 @@ class DeadAgeHack
   # @return [Member]
   def members
     @source.get_elements('//Member').map { |item| Member.new(item) }
+  end
+
+  def doc
+    output = ""
+    @source.write(output)
+    output
   end
 end
