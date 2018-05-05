@@ -3,4 +3,7 @@ RSpec.describe Member do
   it 'returns HP' do
     expect(member.hp).to eq(400)
   end
+  it 'returns ammo' do
+    expect(member.ammo).to eq(999)
+  end
 end

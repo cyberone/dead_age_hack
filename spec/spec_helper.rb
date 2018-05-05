@@ -12,6 +12,11 @@ class TestDoc
             <Member>
               <ID>Student</ID>
               <hp>400</hp>
+              <mEquipment>
+                <AmmoSlot>
+                  <Amount>999</Amount>
+                </AmmoSlot>
+              </mEquipment>
             </Member>
           </Camp>
         </camp>

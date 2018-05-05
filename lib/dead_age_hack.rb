@@ -10,6 +10,10 @@ class Member
   def hp
     @element.get_elements('hp').first.text.to_i
   end
+
+  def ammo
+    @element.get_elements('mEquipment/AmmoSlot/Amount').first.text.to_i
+  end
 end
 
 # Main class that decorates the savefile
