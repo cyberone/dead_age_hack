@@ -1,3 +1,17 @@
 #!/usr/bin/env ruby
 
 require 'dead_age_hack'
+
+if ARGV.empty?
+  print 'Usage: dead_age_hack <save.xml>'
+else
+  file_name = ARGV.first
+  hack = DeadAgeHack.new(file_name)
+  hack.members.each do |member|
+    member.hp = 500 if member.hp < 500
+    unless member.ammo.nil?
+      member.ammo = 999 if member.ammo < 999
+    end
+  end
+  hack.doc.write(File.open(file_name), 2)
+end
