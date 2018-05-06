@@ -12,5 +12,9 @@ RSpec.describe Member do
       hack.members.first.hp = 10
       expect(hack.doc).to include('<hp>10</hp>')
     end
+    it 'modifies ammo' do
+      hack.members.first.ammo = 200
+      expect(hack.doc).to include('<Amount>200</Amount>')
+    end
   end
 end

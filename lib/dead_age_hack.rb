@@ -20,6 +20,11 @@ class Member
     return element.text.to_i unless element.nil?
     nil
   end
+
+  def ammo=(amount)
+    element = @element.get_elements('mEquipment/AmmoSlot/Amount').first
+    element.text = amount unless element.nil?
+  end
 end
 
 # Main class that decorates the savefile
@@ -35,7 +40,7 @@ class DeadAgeHack
   end
 
   def doc
-    output = ""
+    output = ''
     @source.write(output)
     output
   end
